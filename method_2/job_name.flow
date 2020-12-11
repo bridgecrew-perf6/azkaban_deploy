@@ -1,0 +1,5 @@
+nodes:
+ -  name: job_name
+    type: command
+    config:
+       command: sh azkaban_deploy/method_2/runTask.sh
