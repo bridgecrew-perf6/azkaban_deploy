@@ -33,6 +33,6 @@ filename=`basename $0`
 echo file name is:$filename
 
 
-python -m main \
+python -m run_task \
   --es-host=${es_host} \
   --es-port=${es_port}
