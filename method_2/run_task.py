@@ -6,6 +6,7 @@ def fun():
 
 
 if __name__ == "__main__":
+    """把azkaban文件放在根目录"""
     PARSER = argparse.ArgumentParser()
     PARSER.add_argument("--es-host", type=str, default="")
     PARSER.add_argument("--es-port", type=str, default="")

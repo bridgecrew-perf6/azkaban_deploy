@@ -1,5 +1,5 @@
 nodes:
- -  name: TJD_job
+ -  name: job_name
     type: command
     config:
        command: sh azkaban_deploy/method_1/runTask.sh
