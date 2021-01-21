@@ -3,3 +3,30 @@ nodes:
     type: command
     config:
        command: sh azkaban_deploy/method_1/runTask.sh
+------------截至----------
+
+nodes:
+ -  name: unzip_python
+    type: command
+    config:
+        command: tar -xf python_venv.tar.gz
+
+ -  name: task_name_1
+    type: command
+    config:
+       command: sh task_name_1_x.sh --es-host ${es_host} --es-port ${es_port} --mysql-host ${mysql_host}
+                                   --mysql-port ${mysql_port} --mysql-username ${mysql_username}
+    dependsOn:
+        - unzip_python
+    condition: all_success
+
+ -  name: task_name_2
+    type: command
+    config:
+       command: sh task_name_2_x.sh --es-host ${es_host} --es-port ${es_port} --mysql-host ${mysql_host}
+                                   --mysql-port ${mysql_port} --mysql-username ${mysql_username}
+                                   
+   dependsOn:
+        - task_name_1
+    condition: all_success
+                                   
